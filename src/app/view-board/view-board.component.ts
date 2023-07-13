@@ -25,4 +25,12 @@ export class ViewBoardComponent {
       data: {boardIndex: this.boardIndex}
     });
   }
+
+  deleteCard(indexCard:number) {
+
+  } 
+
+  editCard(indexCard:number,card:any) {
+
+  }
 }
