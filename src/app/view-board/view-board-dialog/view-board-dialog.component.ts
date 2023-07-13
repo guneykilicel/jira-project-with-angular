@@ -32,7 +32,8 @@ export class ViewBoardDialogComponent {
 
 
   deleteTask(i: number) {
-
+    this.tasks.splice(i,1);
+    this.tasksLoop.splice(i,1);
   }
 
   addTask() {

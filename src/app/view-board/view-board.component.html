@@ -1,29 +1,30 @@
 {{boardTitle}}
 
 <div class="d-flex justify-content-center my-5">
-    <button mat-raised-button (click)="openNewCardDialog()" color="warn">
-        Yeni Kart Ekle
-    </button>
-</div>
-
-
-<mat-card *ngFor="let card of boardService.boards[boardIndex].cards; let i = index">
-    <mat-card-header>
-      <mat-card-title>{{card.title}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <div>
-            <mat-checkbox *ngFor="let checkbox of card.checklist;let ikinci = index"
-            [(ngModel)]="card.status[ikinci]"
-            >
-            {{checkbox}}
-            </mat-checkbox>
+    <div class="d-flex justify-content-center flex-column">
+        <div class="d-flex justify-content-center mb-3">
+            <button mat-raised-button (click)="openNewCardDialog()" color="warn">
+                Yeni Kart Ekle
+            </button>
         </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button color="accent" (click)="deleteCard(i)" mat-raised-button>Kartı Sil</button>
-      <button color="primary" (click)="editCard(i,card)" mat-raised-button>Güncelle</button>
-    </mat-card-actions>
-  </mat-card>
-  <br>
-  
+
+
+
+        <mat-card style="min-width: 400px; margin-bottom: 20px;" *ngFor="let card of boardService.boards[boardIndex].cards; let i = index">
+            <mat-card-header>
+                <mat-card-title>{{card.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="d-flex flex-column">
+                    <mat-checkbox *ngFor="let checkbox of card.checklist;let ikinci = index"
+                        [(ngModel)]="card.status[ikinci]">
+                        {{checkbox}}
+                    </mat-checkbox>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button color="accent" (click)="deleteCard(i)" mat-raised-button>Kartı Sil</button>
+                <button color="primary" (click)="editCard(i,card)" mat-raised-button>Güncelle</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
