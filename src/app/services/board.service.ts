@@ -18,8 +18,14 @@ export class BoardService {
       title: title,
       cards: []
     };
-    debugger;
+    // debugger;
     this.boards.push(newBoardObj)
     localStorage.setItem('boards',JSON.stringify(this.boards));
+  }
+
+  public deleteBoard(boardNumber:number) {
+    this.boards.splice(boardNumber,1);
+    localStorage.setItem('boards',JSON.stringify(this.boards));
+
   }
 }

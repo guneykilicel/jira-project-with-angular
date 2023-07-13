@@ -1,3 +1,14 @@
 <div class="d-flex justify-content-center my-5">
     <button mat-raised-button (click)="openNewBoardDialog()" color="warn">Yeni Board Ekle</button>
 </div>
+
+<div *ngFor="let board of boardService.boards; let i=index">
+    {{board.title}}
+    <div>
+        <button mat-icon-button (click)="deleteBoard(i)">
+            <mat-icon>
+                delete
+            </mat-icon>
+        </button>
+    </div>
+</div>

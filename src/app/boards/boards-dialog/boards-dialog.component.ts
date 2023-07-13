@@ -19,6 +19,7 @@ export class BoardsDialogComponent {
 
   create(){
     this.boardService.createBoard(this.boardForm.get('title')?.value);
+    this.dialogRef.close();
   }
   close() {
     this.dialogRef.close();
