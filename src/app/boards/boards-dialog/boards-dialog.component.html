@@ -1,1 +1,16 @@
-<p>boards-dialog works!</p>
+<h2 mat-dialog-title>Yeni Board Ekle</h2>
+<mat-dialog-content>
+    <form [formGroup]="boardForm">
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Başlık</mat-label>
+            <input matInput formControlName="title">
+            <mat-error *ngIf="boardForm.get('title')?.hasError('required')">
+                Başlık girmek zorunludur
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button (click)="close()" color="accent">İptal</button>
+    <button [disabled]="boardForm.invalid" (click)="create()" mat-raised-button color="primary">Oluştur</button>
+</mat-dialog-actions>
