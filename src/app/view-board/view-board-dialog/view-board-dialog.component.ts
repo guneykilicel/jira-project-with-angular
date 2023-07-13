@@ -22,7 +22,12 @@ export class ViewBoardDialogComponent {
 
 
   ngOnInit(): void {
-    let a = this.data;
+    if(this.data.editMode) {
+      this.title = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title;
+      this.tasksLoop = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status;
+      this.tasks = this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist;
+
+    }
   }
 
 
@@ -44,11 +49,18 @@ export class ViewBoardDialogComponent {
       this._snackBar.open("Yeni Taskı Giriniz", "Ok");
     }
     else {
-      this.boardService.boards[this.data.boardIndex].cards.push({
-        title: this.title,
-        checklist: this.tasks,
-        status: this.tasksLoop
-      });
+      if(!this.data.editMode) {
+        this.boardService.boards[this.data.boardIndex].cards.push({
+          title: this.title,
+          checklist: this.tasks,
+          status: this.tasksLoop
+        });
+      }else {
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].title = this.title;
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].status = this.tasksLoop;
+        this.boardService.boards[this.data.boardIndex].cards[this.data.cardIndex].checklist = this.tasks;
+      }
+      
       this.boardService.updateDataToLocaleStorage();
       this.close();
     }

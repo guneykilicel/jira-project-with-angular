@@ -22,15 +22,19 @@ export class ViewBoardComponent {
   openNewCardDialog() {
     const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
       width:'500px',
-      data: {boardIndex: this.boardIndex}
+      data: {boardIndex: this.boardIndex, editMode:false}
     });
   }
 
   deleteCard(indexCard:number) {
-
+    this.boardService.boards[this.boardIndex].cards.splice(indexCard,1);
+    this.boardService.updateDataToLocaleStorage();
   } 
 
   editCard(indexCard:number,card:any) {
-
+    const dialogRef = this.matDialog.open(ViewBoardDialogComponent, {
+      width:'500px',
+      data: {boardIndex: this.boardIndex, cardIndex:indexCard, editMode:true}
+    });
   }
 }
