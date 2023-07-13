@@ -6,7 +6,7 @@
         <input [(ngModel)]="title" matInput>
     </mat-form-field>
 
-    <div *ngFor="let task of tasks; let i = index">
+    <div *ngFor="let task of tasksLoop; let i = index">
         <mat-form-field style="width: 90%;">
             <mat-label>Task {{i+1}} </mat-label>
             <input [(ngModel)]="tasks[i]" matInput>
@@ -20,5 +20,5 @@
 <mat-dialog-actions>
     <button (click)="addTask()" mat-raised-button>Yeni Task Ekle</button>
     <button (click)="close()" mat-raised-button color="accent">İptal Et</button>
-    <button mat-raised-button color="primary">Ekle</button>
+    <button (click)="create()" mat-raised-button color="primary">Ekle</button>
 </mat-dialog-actions>
