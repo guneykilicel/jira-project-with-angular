@@ -2,8 +2,10 @@
     <button mat-raised-button (click)="openNewBoardDialog()" color="warn">Yeni Board Ekle</button>
 </div>
 
-<div *ngFor="let board of boardService.boards; let i=index">
-    {{board.title}}
+<div class="d-flex justify-content-between bg-warning align-items-center m-3 px-3" *ngFor="let board of boardService.boards; let i=index">
+    <div>
+        {{board.title}}
+    </div>
     <div>
         <button mat-icon-button (click)="deleteBoard(i)">
             <mat-icon>
@@ -11,4 +13,5 @@
             </mat-icon>
         </button>
     </div>
+
 </div>
