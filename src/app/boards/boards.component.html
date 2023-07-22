@@ -2,17 +2,22 @@
     <button mat-raised-button (click)="openNewBoardDialog()" color="warn">Yeni Board Ekle</button>
 </div>
 
-<div class="d-flex justify-content-between bg-warning align-items-center m-3 px-3"
-    *ngFor="let board of boardService.boards; let i=index" [routerLink]="'/view-board/'+i">
-    <div>
-        {{board.title}}
-    </div>
-    <div>
-        <button mat-icon-button (click)="deleteBoard(i)">
-            <mat-icon>
-                delete
-            </mat-icon>
-        </button>
-    </div>
 
-</div>
+<div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex flex-column align-items-center">
+        <div style="width: 650px; border-radius: 7px" class="d-flex justify-content-between bg-warning align-items-center m-3 px-3"
+        *ngFor="let board of boardService.boards; let i=index" [routerLink]="'/view-board/'+i">
+        <div>
+            {{board.title}}
+        </div>
+        <div>
+            <button mat-icon-button (click)="deleteBoard(i)">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </button>
+        </div>
+    
+    </div>
+    </div>
+  </div>
