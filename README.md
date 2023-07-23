@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J1.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J2.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J3.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J4.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J5.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J6.png)
+![](https://github.com/guneykilicel/jira-project-with-angular/blob/main/src/assets/gitI/J17.png)
